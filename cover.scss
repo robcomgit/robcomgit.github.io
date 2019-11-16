@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900');
+$main: #1C110F;
+$second: #FFD99A;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #FFD99A;
+  overflow: hidden;
+}
+
+.loader {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  overflow: hidden;
+  &:before {
+    position: absolute;
+    top: 50%;
+    content: '';
+    width: 30px;
+    height: 30px;
+    border: 3px solid;
+    border-color: transparent transparent $main transparent;
+    border-radius: 100%;
+    animation: 1s spin ease infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  > * {
+    margin: 5px;
+  }
+  font-size: 40px;
+  color: $main;
+}
+
+.name {
+  display: flex;
+}
+
+.left,
+.right {
+  z-index: 10;
+  position: relative;
+  width: 30px;
+  height: 60px;
+  overflow: hidden;
+  color: #1C110F;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700;
+  font-size: 50px;
+  transition: width 0.4s 0.1s;
+}
+
+.right:hover,
+.left:hover {
+  transition: width 0.4s 0.1s;
+}
+
+.left:hover {
+  width: 165px;
+}
+
+.right:hover {
+  width: 180px;
+}
+
+span {
+  position: absolute;
+}
+
+#name {
+  left: 30px;
+}
+
+.intro {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background: $main;
+  width: 40%;
+  right: -1000px;
+  margin: 0;
+  height: 100vh;
+  color: $second;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  > * {
+    margin: 10px;
+  }
+}
+
+.close {
+  display: flex;
+  justify-content: flex-end;
+  width: 60%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+// .bot{
+//   height: 50px;
+// }
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 63%;
+  // height: 100%;
+  font-size: 24px;
+  transform: translateX(20px);
+  font-weight: 200;
+  letter-spacing: 1px;
+  a {
+    position: relative;
+    color: #FFD99A;
+    text-decoration: none;
+  }
+  > * {
+    margin: 10px 0;
+  }
+}
+
+.about-me {
+  text-align: center;
+  line-height: 45px;
+}
+
+#social {
+  font-size: 29px;
+  > * {
+    margin: 5px
+  }
+}
+
+#work {
+  font-size: 20px;
+  margin: 40px 0;
+  > * {
+    margin: 5px
+  }
+}
+
+.out {
+  transition: 1s all ease;
+  transform: translateX(450px);
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  animation: 0.5s bounce ease infinite;
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 700px) {
+  
+  .loader {
+    display: none;
+  }
+  
+  .container {
+    width: auto;
+  }
+  
+  .intro {
+    width: 100%;
+  }
+  
+  .wrapper > * {
+    margin: 0;
+  }
+  
+  .text {
+    width: 100%;
+   display: block;
+    text-align: center;
+    z-index: -1;
+    margin: 0;
+    transform: translateX(0);
+    font-weight: 400;
+    font-size: 20px;
+  }
+  
+  .close {
+    width: 90%;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+
+#app {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+  // background-image: linear-gradient(to bottom right,
+  //   #FFD99A 0 15%, #FFD99A 40% 60%, #FFD99A 85% 100%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-splatter {
+  color: #ffffff;
+  font-family: inherit;
+  font-weight: bold;
+  background-color: #1C110F;
+  width: 12em;
+  height: 4em;
+  border: 0;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  border-radius: 0.9em;
+  box-shadow: 0 0.6em 0.9em rgba(0, 0, 0, 0.6);
+  user-select: none; /* Thanks to @SplittyDev */
+  transform: translateY(-0.5em);
+  transition:
+    background-color 300ms cubic-bezier(0.18, 0.89, 0.32, 1.28),
+    box-shadow 300ms cubic-bezier(0.18, 0.89, 0.32, 1.28),
+    transform 300ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.btn-splatter:focus {
+  outline: 0;
+}
+
+.btn-splatter:active {
+  background-color: #1C110F;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+  transform: translateY(0em) scale(0.9);
+  transition:
+    background-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    transform 150ms ease-out;
+}
+
+.splatter {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.splatter-round, .splatter-ring, .splatter-star {
+  position: absolute;
+}
+
+.splatter-round {
+  width: 1em;
+  height: 1em;
+  background-color: #1C110F;
+  border-radius: 50%;
+}
+
+.splatter-ring {
+  width: 0.8em;
+  height: 0.8em;
+  border: solid 0.35em #1C110F;
+  border-radius: 50%;
+}
+
+.splatter-star {
+  width: 1.8em;
+  height: 1.8em;
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="%23006dd0" viewBox="0 0 24 24"%3E%3Cpath%20d%3D%22M12%2C17.27L18.18%2C21L16.54%2C13.97L22%2C9.24L14.81%2C8.62L12%2C2L9.19%2C8.62L2%2C9.24L7.45%2C13.97L5.82%2C21L12%2C17.27Z%22%3E%3C%2Fpath%3E%3C/svg%3E');
+}
+
